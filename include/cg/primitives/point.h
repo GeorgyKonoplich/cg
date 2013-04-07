@@ -41,11 +41,27 @@ namespace cg
       else
          return a.x < b.x;
    }
+   
+   template <class Scalar>
+   bool operator <= (point_2t<Scalar> const & a, point_2t<Scalar> const & b)
+   {
+      if (a.x == b.x)
+         return a.y <= b.y;
+      else
+         return a.x < b.x;
+   }
+
 
    template <class Scalar>
    bool operator > (point_2t<Scalar> const & a, point_2t<Scalar> const & b)
    {
       return b < a;
+   }
+
+   template <class Scalar>
+   bool operator >= (point_2t<Scalar> const & a, point_2t<Scalar> const & b)
+   {
+      return b <= a;
    }
 
    template <class Scalar>
