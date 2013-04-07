@@ -14,6 +14,9 @@ link_directories(${Boost_LIBRARYDIR})
 
 set(SOURCES
    intersection.cpp
+   contain.cpp
+   line_triangle.cpp
+   line_rectangle.cpp
 )
 
 add_executable(cg-test ${SOURCES})
