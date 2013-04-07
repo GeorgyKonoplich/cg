@@ -13,11 +13,11 @@ include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARYDIR})
 
 set(SOURCES
-   orientation.cpp
+   intersection.cpp
 )
 
 add_executable(cg-test ${SOURCES})
-target_link_libraries(cg-test ${GTEST_BOTH_LIBRARIES} ${GMP_LIBRARIES})
+target_link_libraries(cg-test ${GTEST_BOTH_LIBRARIES} ${GMP_LIBRARIES} pthread)
 
 file(GLOB_RECURSE HEADERS "*.h")
 add_custom_target(cg_test_headers SOURCES ${HEADERS})

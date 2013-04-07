@@ -6,7 +6,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMake/Modules)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -Wall")
 
-find_package(OpenGL REQUIRED)
+
 find_package(GMP REQUIRED)
 
 find_package(Qt4 COMPONENTS QtOpenGL QtCore QtGui REQUIRED)
