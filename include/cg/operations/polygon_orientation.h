@@ -10,13 +10,13 @@ namespace cg{
 	template<class Scalar>
 	int polygon_orient(pole<Scalar> const& a){
 		std::vector<point_2t<Scalar>> points = a.get_vector();
-		auto _it = std::min_element(points.begin(), points.end(), 
+		auto rc = std::min_element(points.begin(), points.end(), 
             [] (point_2t<Scalar> const& l, point_2t<Scalar> const& r){ 
             	return l < r; 
         	});
 		 
-		return 1;
+		//return 1;
 		//common::range_circulator <Scalar > rc(points.begin(), points.end(), _it);
-		//return orientation(*rc, *(rc + 1), *(rc - 1));
+		return orientation(*rc, *(rc + 1), *(rc - 1));
 	}
 }
