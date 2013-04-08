@@ -9,6 +9,7 @@ namespace cg
 
    typedef rectangle_2t<float> rectangle_2f;
    typedef rectangle_2t<int>   rectangle_2i;
+   typedef rectangle_2t<double> rectangle_2;
 
    template <class Scalar>
    struct rectangle_2t
@@ -42,6 +43,19 @@ namespace cg
       {
          return rectangle_2t(range_t<Scalar>::maximal(), range_t<Scalar>::maximal());
       }
+      point_2t<Scalar> aa()const {
+         return point_2t<Scalar>(x.sup, y.sup);
+      }
+      point_2t<Scalar> bb()const {
+         return point_2t<Scalar>(x.sup, y.inf);
+      }
+      point_2t<Scalar> cc()const {
+         return point_2t<Scalar>(x.inf, y.inf);
+      }
+      point_2t<Scalar> dd()const {
+         return point_2t<Scalar>(x.inf, y.sup);
+      }
+
    };
 
    template <class Scalar>
