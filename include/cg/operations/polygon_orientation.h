@@ -1,12 +1,22 @@
 #pragma once
 
 #include <cg/operations/orientation.h>
-#include <cg/primitives/pole.h>
+#include <cg/primitives/contour.h>
 #include <vector>
 #include <algorithm>
-#include <cg/common/range.h>
 
 namespace cg{
+	enum c_orientation_t{
+		CG_CLEFT = 1,
+		CG_CRIGHT = -1
+	};
+	c_orientation_t polygon_orient(contour_2 const& contour){
+		auto it = std::min_element(contour.begin(), contour.end());
+		auto circ = contour.circulator(it);
+		return orientation(*it, *(--circ), *(++circ)) == CG_LEFT ? CG_CLEFT : CG_CRIGHT;
+	}
+}
+/*namespace cg{
 	template<class Scalar>
 	int polygon_orient(pole<Scalar> const& a){
 		std::vector<point_2t<Scalar>> points = a.get_vector();
@@ -19,4 +29,4 @@ namespace cg{
 		//common::range_circulator <Scalar > rc(points.begin(), points.end(), _it);
 		return orientation(*rc, *(rc + 1), *(rc - 1));
 	}
-}
+}*/
