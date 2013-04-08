@@ -7,20 +7,14 @@
 namespace cg{
 	template<class Scalar>
 	bool convex_polygon_point(contour_2t<Scalar> const& contour, point_2t<Scalar> const& point){
-		auto first = *contour.begin();
+		auto first = contour[0];
 		auto itr = std::lower_bound(contour.begin(), contour.end(), point,
-                                  [&] (point_2 const& l, point_2 const& val){
-    		auto o = orientation(first, l, val);
-        	return o == CG_RIGHT || o == CG_COLLINEAR;
+                                  [&] (point_2 const& x, point_2 const& y){
+    		auto t = orientation(first, x, y);
+        	return t == CG_LEFT;
      	});
      	auto circ = contour.circulator(itr); 
-     	if (first != *(--circ) && first != *(circ) && contain(triangle<Scalar>(first, *circ, *(--circ)), point)) return true;
-		if (first != *(++circ) && first != *(circ) && contain(triangle<Scalar>(first, *circ, *(++circ)), point)) return true;	
-   		auto circ1 = contour.circulator(contour.begin());
-   		auto t1 = orientation(first, *(++circ1), point);
-   		auto t2 = orientation(first, *(--circ1), point);
-   		if (t1 >= 0 && t2 >= 0 || t1 <= 0 && t2 <= 0) return true;
-   		return false;
+     	return contain(triangle<double>(first, *itr, *(++circ)), point);
    }
 }
 /*
