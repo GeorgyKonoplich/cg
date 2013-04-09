@@ -22,10 +22,12 @@ namespace cg{
 				return true;
 			}
 			if (orientation(up, line[0], line[1]) == 0){
-				segment_2t<Scalar> seg1(contour[(i - 1 + contour.vertices_num()) % contour.vertices_num()]
-										,contour[(i + 1) % contour.vertices_num()]);
-				if (is_intersecting_lines(line, seg1)) kol++;
-			}
+				point_2t<Scalar> xx(contour[(i - 1 + contour.vertices_num()) % contour.vertices_num()]);
+				point_2t<Scalar> yy(contour[(i + 1) % contour.vertices_num()]);
+				segment_2t<Scalar> seg1(xx,yy);
+				if (is_intersecting_lines(line, seg1) && orientation(xx, line[0], line[1]) != 0
+					&& orientation(yy, line[0], line[1]) != 0) kol++;
+			}else if (orientation(down, line[0], line[1]) != 0)
 			if (is_intersecting_lines(line, seg)){
 				kol++;
 			}
