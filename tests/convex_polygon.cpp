@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include <cg/operations/convex_polygon.h>
+#include <cg/operations/point_in_convex_polygon.h>
 
 using namespace cg;
 

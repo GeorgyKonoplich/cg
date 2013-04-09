@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include <cg/operations/intersect.h>
+#include <cg/operations/segments_intersect.h>
 
 using namespace cg;
 

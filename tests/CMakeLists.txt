@@ -19,6 +19,7 @@ set(SOURCES
    line_rectangle.cpp
    convex_polygon.cpp
    polygon_orientation.cpp
+   point_in_polygon.cpp
 )
 
 add_executable(cg-test ${SOURCES})

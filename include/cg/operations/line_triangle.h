@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cg/operations/containp.h>
+#include <cg/operations/point_in_triangle.h>
 #include <cg/primitives/segment.h>
-#include <cg/operations/intersect.h>
+#include <cg/operations/segments_intersect.h>
 using namespace cg;
 
 namespace cg{
