@@ -44,6 +44,12 @@ TEST(is_point_in_polygon, begin_from_vertex1)
     point_2 a(0, 0), b(5, 0), c(7, 3), d(0, .1), e(7, 5), f(0, 10), g(0, .11), h(-3, 5), i(-3, 2), x(0, 10);
     EXPECT_EQ(point_in_polygon(contour_2({a, b, c, d, e, f, g, h, i}), x), true);
 }
+TEST(is_point_in_polygon, points_on_ones_lines)
+{
+    point_2 a(0, 0), b(1, 1), c(2, 1), d(3, 1), e(2, 2), f(-2, 2), g(-2, 0), x(0, 1);
+    EXPECT_EQ(point_in_polygon(contour_2({a, b, c, d, e, f, g}), x), true);
+}
+
 
 TEST(is_point_in_polygon, begin_from_vertex2)
 {
