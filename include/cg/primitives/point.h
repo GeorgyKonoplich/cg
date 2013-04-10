@@ -91,4 +91,21 @@ namespace cg
       res += delta;
       return res;
    }
+   template <class Scalar>
+   Scalar operator * (point_2t<Scalar>  & a, point_2t<Scalar> & b)
+   {
+      return (a.x * b.y - a.y * b.x);
+   }
+   /*template <class Scalar>
+   point_2t<Scalar> operator + (point_2t<Scalar> const & a, point_2t<Scalar> const & b)
+   {
+      return point_2t<Scalar>(a.x + b.x, a.y + b.y);
+   }
+   template <class Scalar>
+   point_2t<Scalar> operator - (point_2t<Scalar> const & a, point_2t<Scalar> const & b)
+   {
+      return point_2t<Scalar>(a.x - b.x, a.y - b.y);
+   }*/
+
 }
+   

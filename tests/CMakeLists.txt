@@ -20,6 +20,7 @@ set(SOURCES
    convex_polygon.cpp
    polygon_orientation.cpp
    point_in_polygon.cpp
+   point_of_intersection.cpp
 )
 
 add_executable(cg-test ${SOURCES})
