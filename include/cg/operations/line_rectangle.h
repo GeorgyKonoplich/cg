@@ -6,7 +6,7 @@
 namespace cg{
 	template<class Scalar>
 	bool rectangle_line(rectangle_2t<Scalar> const & a, segment_2t<Scalar> const & b){
-        return (triangle_line(triangle<Scalar>(a.aa(), a.bb(), a.cc()), b)
-                || triangle_line(triangle<Scalar>(a.aa(), a.dd(), a.cc()), b));
+        return (triangle_line(triangle_2t<Scalar>(a.aa(), a.bb(), a.cc()), b)
+                || triangle_line(triangle_2t<Scalar>(a.aa(), a.dd(), a.cc()), b));
     }
 }

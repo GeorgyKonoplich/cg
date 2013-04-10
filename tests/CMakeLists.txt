@@ -13,6 +13,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARYDIR})
 
 set(SOURCES
+#    orientation.cpp
    intersection.cpp
    contain.cpp
    line_triangle.cpp
@@ -20,8 +21,7 @@ set(SOURCES
    convex_polygon.cpp
    polygon_orientation.cpp
    point_in_polygon.cpp
-#   point_of_intersection.cpp
-#    main.cpp
+   point_of_intersection.cpp
 )
 
 add_executable(cg-test ${SOURCES})

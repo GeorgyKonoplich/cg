@@ -16,6 +16,6 @@ namespace cg{
      	if (itr == contour.end()){
      		return false;
      	}
-     	return contain(triangle<double>(first, *itr, *(itr - 1)), point);
+     	return contain(triangle_2t<Scalar>(first, *itr, *(itr - 1)), point);
      }
 }
